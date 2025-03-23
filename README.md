@@ -2,14 +2,15 @@ Abdulelah and Maram's printf Project! 😎
 
 A simplified version of the C printf function. It prints text, strings, characters, and integers to the screen.
 
-🧠 What It Does
+*Specifier Table:
 
-Specifiers: %c, %s, %d, %i, %%, and more...
-
-Uses va_list for variable arguments
-
-Prints using write() (no _putchar)
-
+|   Specifier   |    Output     |
+| ------------- | :-----------: |
+|       %c      |   character   |
+|       %s      |    string     |
+|       %d      |     digit     |
+|       %i      |    integer    |
+|       %%      |  percentage   |
 🔧 Compilation
 
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
