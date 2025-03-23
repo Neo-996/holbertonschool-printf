@@ -21,15 +21,6 @@ Abdulelah Alshehri
 
 Maram Alsofyani
 
-📁 Files
-
-main.h – Header file
-
-_printf.c – Main logic
-
-man_3_printf – Manual page
-
-README.md – This file
 
 ✅ Example
 
