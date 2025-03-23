@@ -32,7 +32,7 @@ README.md – This file
 
 ✅ Example
 
-_printf("Name: %s, Age: %d%%\n", "Ali", 100);
+_printf("Name: %s, Age: %d", "Ali", 100);
 
 Output:
 
