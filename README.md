@@ -4,7 +4,7 @@ A simplified version of the C printf function. It prints text, strings, characte
 
 🧠 What It Does
 
-Supports %c, %s, %d, %i, and %%
+Specifiers: %c, %s, %d, %i, %%, and more...
 
 Uses va_list for variable arguments
 
