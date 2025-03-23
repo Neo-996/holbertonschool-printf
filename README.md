@@ -36,7 +36,7 @@ _printf("Name: %s, Age: %d%%\n", "Ali", 100);
 
 Output:
 
-Name: Ali, Age: 100%
+Name: Ali, Age: 100
 
 🧪 Test it
 
