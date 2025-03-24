@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printf - Produces output 
+ * _printf - Produces output
  * @format: Is a character string. The format string
  * is composed of zero or more directives
  *
@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	int count = 0, j = 0, i = 0;
 	spec_t spec_list[] = {
 	  {'c', print_char}, {'s', print_string}, {'%', print_percent}, {'\0', NULL}};
-	
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
