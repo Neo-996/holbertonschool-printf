@@ -14,8 +14,14 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0, j = 0, i = 0;
 	spec_t spec_list[] = {
-	  {'c', print_char}, {'s', print_string}, {'%', print_percent}, {'\0', NULL}};
-	va_start(args, format);
+	{'c', print_char},
+	{'s', print_string},
+	{'%', print_percent},
+	{'d', print_decimal},
+	{'i', print_decimal},
+	{'\0', NULL}
+};
+va_start(args, format);
 	if (format == NULL)
 		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
