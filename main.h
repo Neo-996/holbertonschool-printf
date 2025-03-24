@@ -2,7 +2,6 @@
 #define MAIN_H
 
 #include <stdarg.h>
-#include <stdlib.h>
 #include <stddef.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -21,7 +20,7 @@ typedef struct specifier
 } spec_t;
 
 int _printf(const char *format, ...);
-int _putchar(char c)
+int _putchar(char c);
 int print_char(va_list args);
 int print_string(va_list args);
 int print_percent(va_list args);
