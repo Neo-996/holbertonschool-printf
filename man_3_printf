@@ -1,0 +1,38 @@
+.TH _PRINTF 3 "March 2025" "Holberton School" "Custom Manual"
+.SH NAME
+_printf \- produces output according to a format.
+.SH SYNOPSIS
+.B #include "main.h"
+.sp
+.BI "int _printf(const char *format, ...);"
+.SH DESCRIPTION
+The
+.B _printf()
+function produces output according to a format as described below. This function writes output to standard output (stdout). The format string can contain:
+- Ordinary characters, which are copied to the output as-is.
+- Conversion specifiers, each of which results in fetching zero or more subsequent arguments and formatting them.
+
+Supported conversion specifiers:
+.TP
+.B %c
+Prints a single character.
+.TP
+.B %s
+Prints a string of characters.
+.TP
+.B %%
+Prints a percent sign.
+.TP
+.B %d, %i
+Prints a decimal (base 10) number.
+
+.SH RETURN VALUE
+Upon successful return, the
+.B _printf()
+function returns the number of characters printed (excluding the null byte used to end output to strings). If an output error is encountered, a negative value is returned.
+
+.SH AUTHORS
+Written by Abdulelah Alshehri and Maram Alsofyani.
+
+.SH SEE ALSO
+.BR printf (3)
