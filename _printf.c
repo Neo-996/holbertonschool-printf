@@ -1,79 +1,41 @@
 #include "main.h"
-#include <stdarg.h>
-#include <unistd.h>
 
-/**
- * _putchar - writes a character to stdout
- * @c: The character to print
- *
- * Return: On success, 1. On error, -1.
- */
-int _putchar(char c)
-{
-  return (write(1, &c, 1));
-}
 
-/**
- * _printf - custom printf function to handle %c, %s, and %%
- * @format: The format string containing the characters and specifiers
- *
- * Return: number of characters printed
- */
 int _printf(const char *format, ...)
 {
-  va_list args;
-  int count = 0;
-  const char *ptr = format;
-
-  va_start(args, format);
-
-  while (*ptr != '\0')
-    {
-      if (*ptr == '%' && *(ptr + 1) != '\0')
+	va_list args;
+	int count = 0, j = 0, i = 0;
+	spec_t spec_list[] = {
+	  {'c', print_char}, {'s', print_string}, {'%', print_percent}, {'\0', NULL}};
+	va_start(args, format);
+	if (format == NULL)
+		return (-1);
+	for (i = 0; format[i] != '\0'; i++)
 	{
-	  ptr++;
-
-	  if (*ptr == 'c')
-	    {
-	      char ch = va_arg(args, int);
-	      _putchar(ch);
-	      count++;
-	    }
-	  else if (*ptr == 's')
-	    {
-	      char *str = va_arg(args, char *);
-
-	      if (str == NULL)
-		str = "(null)";
-
-	      while (*str)
+		if (format[i] == '%')
 		{
-		  _putchar(*str);
-		  str++;
-		  count++;
+			if (format[i + 1] == '\0')
+				return (-1);
+			for (j = 0; spec_list[j].c != '\0'; j++)
+			{
+				if (format[i + 1] == spec_list[j].c)
+				{
+					count += spec_list[j].spec(args);
+					break;
+				}
+			}
+			if (spec_list[j].c == '\0')
+			{
+				count += _putchar(format[i]);
+				count += _putchar(format[i + 1]);
+			}
+			i++;
 		}
-	    }
-	  else if (*ptr == '%')
-	    {
-	      _putchar('%');
-	      count++;
-	    }
-	  else
-	    {
-	      _putchar('%');
-	      _putchar(*ptr);
-	      count += 2;
-	    }
-	}
-      else
-	{
-	  _putchar(*ptr);
-	  count++;
-	}
-      ptr++;
-    }
-  va_end(args);
-
-  return (count);
+		else
+		{
+			_putchar(format[i]);
+			count++;
+		}}
+	va_end(args);
+	return (count);
 }
-	      
