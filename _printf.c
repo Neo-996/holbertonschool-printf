@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	{'s', print_string},
 	{'%', print_percent},
 	{'d', print_decimal},
-	{'i', print_decimal},
+	{'i', print_integer},
 	{'\0', NULL}
 };
 va_start(args, format);
