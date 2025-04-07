@@ -50,6 +50,6 @@ va_start(args, format);
 			_putchar(format[i]);
 			count++;
 		}}
-	va_end(args);
-	return (count);
+va_end(args);
+return (count);
 }
